@@ -145,7 +145,8 @@ int main() //Função Principal
 		printf("\t  Escolha a opção desejada do menu:\n\n");
 		printf("\t\t1 - Inserir Nomes\n");
 		printf("\t\t2 - Consultar Nomes\n");
-		printf("\t\t3 - Deletar Nomes\n\n");
+		printf("\t\t3 - Deletar Nomes\n");
+		printf("\t\t4 - Sair do Sistema\n\n");
 		printf("\t > "); //Fim do Menu
 	
 		scanf("%d", &opcao); //Armazenando o Valor de Opção
@@ -166,6 +167,11 @@ int main() //Função Principal
 					deletar();
 				break;
 		
+				case 4: //Sair do Sistema
+					printf(" -Obrigado por ultilizar o sistema!-\n");
+					return 0;
+				break;
+					
 				default: //Tela 4 - Opção Inexistente
 					printf("Está opção não está disponível\n\n"); 
 					system("pause");
