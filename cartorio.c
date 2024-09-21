@@ -133,52 +133,74 @@ int main() //Função Principal
 	
 	int opcao = 0; //Variável da Escolha de Telas
 	int laco = 1; //Variável para Repetição
+	char senhadigitada[14]="a";
+	int comparacao;
 	
-	for(laco = 1; laco = 1;) //Linha de Código para Retorno de Menu
+	for(laco = 1; laco = 1;)
 	{
-
-    	system("cls"); //Apaga as Outras Telas ao Retornar ao Menu
-
-		setlocale(LC_ALL, "Portuguese"); //Definindo Linguagem
+		system("cls");
+		setlocale(LC_ALL, "Portuguese");
 	
-		printf("\t================Cartório da EBAC================\n\n"); //Início do Menu
-		printf("\t  Escolha a opção desejada do menu:\n\n");
-		printf("\t\t1 - Inserir Nomes\n");
-		printf("\t\t2 - Consultar Nomes\n");
-		printf("\t\t3 - Deletar Nomes\n");
-		printf("\t\t4 - Sair do Sistema\n\n");
-		printf("\t > "); //Fim do Menu
+		printf("\t================Cartório da EBAC================\n\n"); //Início tela de login
+		printf("\t\t ####Login de Administrador####\n\n");
+		printf("\t\t       Digite a sua Senha\n\n\t\t >"); //Fim tela de Login
+		scanf("%s", senhadigitada); //Escaneia valor digitado e armazena na string "senhadigitada"
 	
-		scanf("%d", &opcao); //Armazenando o Valor de Opção
+		comparacao = strcmp(senhadigitada, "Comidafresca"); //Valor de variável "comparacao" igual ao valor de comparação da string "senhadigitada" e "Comidafresca" 
 	
-		system("cls"); //Apaga Menu ao Ir à Outra Tela
-	
-		switch(opcao) //Seleção de Telas
+		if (comparacao == 0) //Se "senhadigitada" e "Comidafresca" forem iguais, comparacao = 0
+		{
+			for(laco = 1; laco = 1;) //Linha de Código para Retorno de Menu
 			{
-				case 1: //Tela 1 - Inserir Nomes
-					registrar();
-				break;
+	
+    			system("cls"); //Apaga as Outras Telas ao Retornar ao Menu
+
+				setlocale(LC_ALL, "Portuguese"); //Definindo Linguagem
+	
+				printf("\t================Cartório da EBAC================\n\n"); //Início do Menu
+				printf("\t  Escolha a opção desejada do menu:\n\n");
+				printf("\t\t1 - Inserir Nomes\n");
+				printf("\t\t2 - Consultar Nomes\n");
+				printf("\t\t3 - Deletar Nomes\n");
+				printf("\t\t4 - Sair do Sistema\n\n");
+				printf("\t > "); //Fim do Menu
+	
+				scanf("%d", &opcao); //Armazenando o Valor de Opção
 		
-				case 2: //Tela 2 - Colsultar Nomes 
-					consultar();
-				break;
+				system("cls"); //Apaga Menu ao Ir à Outra Tela
+	
+				switch(opcao) //Seleção de Telas
+					{
+						case 1: //Tela 1 - Inserir Nomes
+							registrar();
+						break;
 		
-				case 3: //Tela 3 - Deletar Nomes
-					deletar();
-				break;
+						case 2: //Tela 2 - Colsultar Nomes 
+							consultar();
+						break;
+			
+						case 3: //Tela 3 - Deletar Nomes
+							deletar();
+						break;
 		
-				case 4: //Sair do Sistema
-					printf(" -Obrigado por ultilizar o sistema!-\n");
-					return 0;
-				break;
+						case 4: //Sair do Sistema
+							printf(" -Obrigado por ultilizar o sistema!-\n");
+							return 0;
+						break;
 					
-				default: //Tela 4 - Opção Inexistente
-					printf("Está opção não está disponível\n\n"); 
-					system("pause");
-				break;
-    		}
+						default: //Tela 4 - Opção Inexistente
+							printf("Está opção não está disponível\n\n"); 
+							system("pause");
+						break;
+    				}	
 
-    }     
+			}
 
+  	    }     
+		else
+			printf("\t\t\t  Senha Errada\n\n"); //Se a senha estiver errada...
+			system("pause");
+
+	}
 }
 
